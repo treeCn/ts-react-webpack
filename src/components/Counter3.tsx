@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Store } from './../store/types';
+import { Store } from '../store/types';
 import actions, {
   incrementAction,
   decrementAction
-} from './../store/actions/counter';
+} from '../store/actions/counter';
 
 // 方式一、使用之前定义的类型
 // interface Props {

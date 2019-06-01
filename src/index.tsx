@@ -6,9 +6,9 @@ import store from './store';
 
 ReactDOM.render(
   <Provider store={store}>
-  <>
+    <>
       <Counter3 title="计数器" />
-  </>
+    </>
   </Provider>,
   document.getElementById('root')
 );
