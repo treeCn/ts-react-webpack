@@ -1,25 +1,16 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { Store } from '../store/types';
-import actions, {
-  incrementAction,
-  decrementAction
-} from '../store/actions/counter1';
+import { Counter } from '../store/reducers/counter2';
+import { RootState } from './../store/reducers';
+import actions from '../store/actions/counter2';
 
-// 方式一、使用之前定义的类型
-// interface Props {
-//   title: string;
-//   number: number;
-//   increment: () => incrementAction;
-//   decrement: () => decrementAction;
-// }
-// 方式二、动态的判断数据类型
+// 使用方式二、动态读取类型
 type mapStateToPropsType = ReturnType<typeof mapStateToProps>;
 type actionsType = typeof actions;
 // 使用&取并集
 type Props = mapStateToPropsType & actionsType & { title: string };
 
-class Counter3 extends React.Component<Props> {
+class Counter5 extends React.Component<Props> {
   render() {
     const { title, number, increment, decrement } = this.props;
     return (
@@ -32,8 +23,8 @@ class Counter3 extends React.Component<Props> {
     );
   }
 }
-const mapStateToProps = (state: Store): Store => state;
+const mapStateToProps = (state: RootState): Counter => state.counter2;
 export default connect(
   mapStateToProps,
   actions
-)(Counter3);
+)(Counter5);
