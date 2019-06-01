@@ -1,10 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Counter2 from './components/Counter2';
+import { Provider } from 'react-redux';
+import Counter3 from './components/Counter3';
+import store from './store';
 
 ReactDOM.render(
+  <Provider store={store}>
   <>
-    <Counter2 title="计数器" />
-  </>,
+      <Counter3 title="计数器" />
+  </>
+  </Provider>,
   document.getElementById('root')
 );
