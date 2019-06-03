@@ -1,4 +1,5 @@
 import * as types from './../action-types';
+import { push } from 'connected-react-router';
 
 export interface incrementAction {
   type: typeof types.INCREMENT2;
@@ -16,5 +17,8 @@ export default {
   },
   decrement(): decrementAction {
     return { type: types.DECREMENT2 };
+  },
+  goCounte1(path: string) {
+    return push(path);
   }
 };

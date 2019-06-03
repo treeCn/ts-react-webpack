@@ -12,13 +12,14 @@ type Props = mapStateToPropsType & actionsType;
 
 class Counter5 extends React.Component<Props> {
   render() {
-    const { number, increment, decrement } = this.props;
+    const { number, increment, decrement, goCounte1 } = this.props;
     return (
       <div>
         <p>计数器2</p>
         <p>{number}</p>
         <button onClick={increment}>+</button>
         <button onClick={decrement}>-</button>
+        <button onClick={() => goCounte1('/counter1')}>去counter1</button>
       </div>
     );
   }
