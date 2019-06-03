@@ -8,14 +8,14 @@ import actions from '../store/actions/counter1';
 type mapStateToPropsType = ReturnType<typeof mapStateToProps>;
 type actionsType = typeof actions;
 // 使用&取并集
-type Props = mapStateToPropsType & actionsType & { title: string };
+type Props = mapStateToPropsType & actionsType;
 
 class Counter4 extends React.Component<Props> {
   render() {
-    const { title, number, increment, decrement } = this.props;
+    const { number, increment, decrement } = this.props;
     return (
       <div>
-        <p>{title}</p>
+        <p>计数器1</p>
         <p>{number}</p>
         <button onClick={increment}>+</button>
         <button onClick={decrement}>-</button>
